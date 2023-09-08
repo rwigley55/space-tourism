@@ -22,7 +22,8 @@
 
     <title>Space Tourism</title>
 
-    <script src="index.js" defer></script>
+    <script src="navigation.js" defer></script>
+    <script src="tabs.js" defer></script>
   </head>
   <body class="destination">
     <a class="skip-to-content" href="#main">Skip to content</a>
@@ -107,28 +108,44 @@
         <img src="assets/destination/image-titan.png" alt="the moon titan" />
       </picture>
 
-      <div class="tab-list underline-indicators flex">
+      <div
+        class="tab-list underline-indicators flex"
+        role="tablist"
+        aria-label="destination list"
+      >
         <button
           aria-selected="true"
+          role="tab"
+          aria-controls="moon-tab"
           class="uppercase ff-sans-cond text-accent letter-spacing-2"
+          tabindex="0"
         >
           Moon
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="mars-tab"
           class="uppercase ff-sans-cond text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Mars
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="europa-tab"
           class="uppercase ff-sans-cond text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Europa
         </button>
         <button
           aria-selected="false"
+          role="tab"
+          aria-controls="titan-tab"
           class="uppercase ff-sans-cond text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Titan
         </button>
