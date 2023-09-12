@@ -477,6 +477,31 @@ select {
   background-color: hsl(var(--clr-white) / 1);
 }
 
+/* .number-indicators {
+  flex-direction: column;
+} */
+
+.number-indicators > * {
+  cursor: pointer;
+  border: 0.1px solid hsl(var(--clr-white) / 0.5);
+  border-radius: 50%;
+  width: 2.5em;
+  /* height: auto; */
+  aspect-ratio: 1;
+  background-color: transparent;
+  padding: 0 0.85em;
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+  border: 0.1px solid hsl(var(--clr-white) / 1);
+}
+
+.number-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
+  color: hsl(var(--clr-dark));
+}
+
 /* --------------------------------*/
 /* Page specific background        */
 /* --------------------------------*/
