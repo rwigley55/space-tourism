@@ -131,6 +131,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+/* .flex-column {
+  flex-direction: column;
+} */
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
@@ -563,13 +567,35 @@ body {
   }
 }
 
+/* technology */
+.image-landscape {
+  display: block;
+}
+
+.image-portrait {
+  display: none;
+}
+
+@media (min-width: 45rem) {
+  .image-landscape {
+    display: none;
+  }
+
+  .image-portrait {
+    display: block;
+  }
+  .flex-column {
+    flex-direction: column;
+  }
+}
+
 /* --------------------------------*/
 /* Layout                          */
 /* --------------------------------*/
 
 .grid-container {
   text-align: center;
-  /* border: 5px solid green; */
+  /* border: 5px solid yellow; */
   display: grid;
   place-items: center;
   /* place-content would stick the two grid-containers together, putting empty space on top and below the mega container */
@@ -650,6 +676,31 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
+/* technology layout */
+.grid-container--technology {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--technology > picture {
+  grid-area: image;
+}
+
+.grid-container--technology > .number-indicators {
+  grid-area: tabs;
+  border: 1px solid green;
+}
+
+.grid-container--technology > .tech-details {
+  grid-area: content;
+  border: 1px solid red;
+}
+
+/* Media queries */
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -673,6 +724,7 @@ body {
 
 @media (min-width: 45em) {
   .grid-container {
+    border: 5px solid yellow;
     text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
@@ -737,5 +789,17 @@ body {
     grid-column: span 2;
     align-self: end;
     max-width: 90%;
+  }
+
+  .grid-container--technology {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 60rem) minmax(
+        30rem,
+        1fr
+      );
+    justify-items: start;
+    grid-template-areas:
+      ". title title title"
+      ". tabs content image"
+      ". tabs content image";
   }
 }
