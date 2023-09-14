@@ -792,14 +792,14 @@ body {
   }
 
   .grid-container--technology {
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 60rem) minmax(
-        30rem,
-        1fr
-      );
+    grid-template-columns: 1rem minmax(1rem, 5rem) repeat(2, 1fr);
     justify-items: start;
     grid-template-areas:
       ". title title title"
       ". tabs content image"
       ". tabs content image";
   }
+
+  /* .grid-container--technology > picture {
+  } */
 }
