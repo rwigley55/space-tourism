@@ -482,7 +482,7 @@ select {
 }
 
 /* .number-indicators {
-  flex-direction: column;
+  justify-self: end;
 } */
 
 .number-indicators > * {
@@ -810,10 +810,13 @@ body {
   }
 
   .grid-container--technology {
-    grid-template-columns: 1rem minmax(1rem, 5rem) repeat(2, 1fr);
+    grid-template-columns: minmax(1rem, 1fr) 5rem minmax(0, 30rem) minmax(
+        0,
+        50rem
+      );
     justify-items: start;
     grid-template-areas:
-      ". title title title"
+      ". title title ."
       ". tabs content image";
     /* ". tabs content image"; */
   }

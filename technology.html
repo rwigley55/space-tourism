@@ -81,20 +81,39 @@
       <h1 class="numbered-title">
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
-      <div class="number-indicators flex flex-column tab-list">
-        <button aria-selected="true" class="ff-serif fs-600 text-white">
+      <div class="number-indicators flex flex-column tab-list" role="tablist" aria-label="technology list">
+        <button
+          aria-selected="true"
+          aria-controls="launch-tab"
+          role="tab"
+          data-image="launch-image"
+          class="ff-serif fs-600 text-white"
+        >
           1
         </button>
-        <button aria-selected="false" class="ff-serif fs-600 text-white">
+        <button
+          aria-selected="false"
+          aria-controls="spaceport-tab"
+          role="tab"
+          data-image="spaceport-image"
+          class="ff-serif fs-600 text-white"
+        >
           2
         </button>
-        <button aria-selected="false" class="ff-serif fs-600 text-white">
+        <button
+          aria-selected="false"
+          aria-controls="capsule-tab"
+          role="tab"
+          data-image="capsule-image"
+          class="ff-serif fs-600 text-white"
+        >
           3
         </button>
       </div>
+      <!-- launch -->
       <article
         class="tech-details flow"
-        id="commander-tab"
+        id="launch-tab"
         role="tabpanel"
         tabindex="0"
       >
@@ -110,11 +129,47 @@
           on the launch pad!
         </p>
       </article>
-      <picture id="vehicle-image">
-        <!-- <source
-          srcset="assets/technology/image-launch-vehicle-landscape.webp"
-          type="image/webp"
-        /> -->
+      <!-- spaceport -->
+      <article
+        hidden
+        class="tech-details flow"
+        id="spaceport-tab"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <p class="text-accent fs-200 uppercase">The terminology...</p>
+          <h2 class="fs-700 uppercase ff-serif">Spaceport</h2>
+        </header>
+        <p>
+          A spaceport or cosmodrome is a site for launching (or receiving)
+          spacecraft, by analogy to the seaport for ships or airport for
+          aircraft. Based in the famous Cape Canaveral, our spaceport is ideally
+          situated to take advantage of the Earth's rotation for launch.
+        </p>
+      </article>
+      <!-- capsule -->
+      <article
+        hidden
+        class="tech-details flow"
+        id="capsule-tab"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <p class="text-accent fs-200 uppercase">The terminology...</p>
+          <h2 class="fs-700 uppercase ff-serif">Space capsule</h2>
+        </header>
+        <p>
+          A space capsule is an often-crewed spacecraft that uses a blunt-body
+          reentry capsule to reenter the Earth's atmosphere without wings. Our
+          capsule is where you'll spend your time during the flight. It includes
+          a space gym, cinema, and plenty of other activities to keep you
+          entertained.
+        </p>
+      </article>
+      <!-- launch images -->
+      <picture id="launch-image">
         <img
           src="assets/technology/image-launch-vehicle-landscape.jpg"
           alt="launch vehicle"
@@ -123,6 +178,32 @@
         <img
           src="assets/technology/image-launch-vehicle-portrait.jpg"
           alt="launch vehicle"
+          class="image-portrait"
+        />
+      </picture>
+      <!-- spaceport images -->
+      <picture hidden id="spaceport-image">
+        <img
+          src="assets/technology/image-spaceport-landscape.jpg"
+          alt="spaceport site"
+          class="image-landscape"
+        />
+        <img
+          src="assets/technology/image-spaceport-portrait.jpg"
+          alt="spaceport site"
+          class="image-portrait"
+        />
+      </picture>
+      <!-- capsule images -->
+      <picture hidden id="capsule-image">
+        <img
+          src="assets/technology/image-space-capsule-landscape.jpg"
+          alt="ship capsule in space"
+          class="image-landscape"
+        />
+        <img
+          src="assets/technology/image-space-capsule-portrait.jpg"
+          alt="ship capsule in space"
           class="image-portrait"
         />
       </picture>
